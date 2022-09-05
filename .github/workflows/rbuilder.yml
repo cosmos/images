@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: rbuilder
+  IMAGE_NAME: cosmos/rbuilder
 
 jobs:
   build-and-push-image:

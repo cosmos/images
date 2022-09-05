@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: website-deployment
+  IMAGE_NAME: cosmos/website-deployment
 
 jobs:
   build-and-push-image:
