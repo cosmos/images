@@ -34,7 +34,7 @@ set -ue
 # - DEBUG
 
 # Source builder's functions library
-. /usr/local/share/tendermint/buildlib.sh
+. /usr/local/share/cosmos/buildlib.sh
 
 # These variables are now available
 # - BASEDIR
@@ -77,7 +77,7 @@ COMMIT := $(shell git log -1 --format='%H')
 LEDGER_ENABLED ?= true
 
 build-simd-all: go.sum
- docker pull tendermintdev/rbuilder:latest
+ docker pull ghcr.io/cosmos/rbuilder:latest
  docker rm latest-build || true
  docker run --volume=$(CURDIR):/sources:ro \
         --env TARGET_PLATFORMS='linux/amd64 darwin/amd64 linux/arm64 windows/amd64'
@@ -85,6 +85,6 @@ build-simd-all: go.sum
         --env VERSION=$(VERSION) \
         --env COMMIT=$(COMMIT) \
         --env LEDGER_ENABLED=$(LEDGER_ENABLED) \
-        --name latest-build tendermintdev/rbuilder:latest
+        --name latest-build ghcr.io/cosmos/rbuilder:latest
  docker cp -a latest-build:/home/builder/artifacts/ $(CURDIR)/
 ```

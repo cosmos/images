@@ -4,10 +4,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get --no-install-recommends -y install \
     pciutils build-essential git wget \
     lsb-release dpkg-dev curl bsdmainutils fakeroot
-RUN mkdir -p /usr/local/share/tendermint/
+RUN mkdir -p /usr/local/share/cosmos/
 
 # Deploy the shell functions library.
-COPY buildlib.sh /usr/local/share/tendermint/
+COPY buildlib.sh /usr/local/share/cosmos/
 
 # Create the 'builder' user.
 RUN useradd -ms /bin/bash -U builder

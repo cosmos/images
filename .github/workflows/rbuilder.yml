@@ -1,10 +1,9 @@
 name: Build & Push rbuilder
-#  Build & Push rebuilds the rbuilder docker image on every push to master
+#  Build & Push rebuilds the rbuilder docker image on every push to main
 on:
   push:
     branches:
-      - master
-  pull_request:    
+      - main
 
 env:
   REGISTRY: ghcr.io
