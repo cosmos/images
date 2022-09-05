@@ -31,6 +31,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
-          file: ./rbuilder/Dockerfile
+          context: ./rbuilder
           push: true
           tags: ghcr.io/cosmos/rbuilder:latest
