@@ -1,5 +1,5 @@
-name: Build & Push rbuilder
-#  Build & Push rebuilds the rbuilder docker image on every push to main
+name: Build & Push website-deployment
+#  Build & Push rebuilds the website-deployment docker image on every push to main
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: cosmos/rbuilder
+  IMAGE_NAME: cosmos/website-deployment
 
 jobs:
   build-and-push-image:
@@ -36,7 +36,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: ./rbuilder
+          context: ./website-deployment
           push: ${{github.event_name != 'pull_request'}}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
