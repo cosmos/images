@@ -8,4 +8,4 @@ Image is used to deploy new versions of cosmos website.
 
 Currently being used in the following repos:
 
-- [docs.cosmos.network](https://github.com/cosmos/cosmos-sdk)
+- [cosmos/cosmos-sdk](https://github.com/cosmos/cosmos-sdk) - used for deploying `docs.cosmos.network`.
