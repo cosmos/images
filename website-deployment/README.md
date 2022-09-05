@@ -1,8 +1,8 @@
-# Website deployment
+# Website deployment image
 
 To pull this image:  
 
-`docker pull ghcr.io/cosmos/docker-website-deployment`
+`docker pull ghcr.io/cosmos/website-deployment`
 
 Image is used to deploy new versions of cosmos website.
 
