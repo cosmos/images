@@ -41,5 +41,5 @@ jobs:
           file: cosmos/Dockerfile
           context: cosmos
           platforms: linux/amd64,linux/arm64
-          push: github.event_name != 'pull_request'
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ghcr.io/cosmos/images/cosmos:latest
