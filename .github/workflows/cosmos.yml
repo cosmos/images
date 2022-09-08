@@ -2,6 +2,8 @@ name: build
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: main
   push:
     branches: main
   schedule:
@@ -39,5 +41,5 @@ jobs:
           file: cosmos/Dockerfile
           context: cosmos
           platforms: linux/amd64,linux/arm64
-          push: true
+          push: github.event_name != 'pull_request'
           tags: ghcr.io/cosmos/images/cosmos:latest
